@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant List</title>
+</head>
+<body>
+<h1>Welcome to Our Restaurants</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>ID</th>
+        <th>Food Type</th>
+        <th>Vegetarian?</th>
+    </tr>
+    <tr th:each="restaurant : ${restaurants}">
+        <td th:text="${restaurant.name}">Name</td>
+        <td th:text="${restaurant.address}">Address</td>
+        <td th:text="${restaurant.id}">ID</td>
+        <td th:text="${restaurant.foodType}">Food Type</td>
+        <td th:text="${restaurant.isVegetarian ? 'yes' : 'no'}">Vegetarian</td>
+    </tr>
+</table>
+</body>
+</html>
