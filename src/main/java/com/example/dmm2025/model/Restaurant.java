@@ -2,12 +2,6 @@ package com.example.dmm2025.model;
 
 import com.example.dmm2025.ENUM.FoodType;
 
-/*
-@Data //Laver Getter/Setter via Lombok library
-@AllArgsConstructor //Laver constructor med alle attributter
-@NoArgsConstructor //Laver constructor med ingen attributter
-
- */
 public class Restaurant {
 
     private String name;
