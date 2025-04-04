@@ -1,0 +1,102 @@
+/* Forbered layoutet til at opdele siden i venstre, midterste og højre sektion */
+.container {
+    display: flex;
+    justify-content: space-between; /* Skaber plads mellem venstre, midterste og højre sektion */
+    gap: 15px; /* Mellemrum mellem sektionerne */
+    margin: 0 auto;
+    width: 90%; /* Indstil en max bredde på containeren */
+    padding: 10px 0;
+    overflow: visible; /* Sørg for, at der ikke er overflow i containeren */
+}
+
+/* Venstre Sektion - Information */
+.left {
+    width: 35%; /* Sætter bredden af venstre side til 35% */
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 160px); /* højde - 100vh minus topbar og footer */
+    margin-top: -20px; /* Flyt sektionen opad */
+    font-size: 14px; /* tekststørrelse */
+}
+
+/* Midterste Sektion - Tider for tilbud */
+.center {
+    width: 35%; /* Sætter bredden af midten til 35% */
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 160px); /* Justeret højde - 100vh minus topbar og footer */
+    margin-top: -20px; /* Flyt sektionen opad */
+    font-size: 14px; /* Mindre tekststørrelse */
+}
+
+/* Højre Sektion - Madtyper */
+.right {
+    width: 35%; /* Sætter bredden af højre side til 35% */
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 160px); /* højde - 100vh minus topbar og footer */
+    margin-top: -20px; /* Flyt sektionen opad */
+    font-size: 14px; /* tekststørrelse */
+}
+
+/* Style for formular felter */
+input[type="text"], input[type="email"] {
+    width: 95%;
+    padding: 6px;
+    margin: 6px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px; /* tekststørrelse*/
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+label {
+    font-size: 12px; /* Mindre tekststørrelse */
+    color: #333;
+}
+
+/* Tabel layout til tider */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 6px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 12px; /* Mindre tekststørrelse */
+}
+
+/* Reducer størrelsen på knappen */
+button[type="submit"] {
+    background-color: #4CAF50; /* Grøn farve */
+    color: white;
+    border: none;
+    padding: 8px 16px; /* Mindre padding */
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px; /* Mindre tekststørrelse */
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049; /* Ændre farve ved hover */
+}
+
+.left, .center, .right {
+    width: 100%; /* Sæt bredden af hver sektion til 100% på små skærme */
+    margin-bottom: 10px; /* Mellemrum mellem sektionerne */
+    height: auto; /* Juster højden for små skærme */
+
+}
+

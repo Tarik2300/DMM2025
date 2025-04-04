@@ -1,0 +1,17 @@
+body {
+    background-color: darkslategray;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-size: 48px;
+    font-weight: bold;
+    color: grey;
+}
+
+tr{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
