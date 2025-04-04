@@ -1,31 +1,130 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="da">
+
 <head>
     <meta charset="UTF-8">
-    <title>Restaurant List</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-    <link rel="stylesheet" th:href="@{/css/HeadBottom.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilmelding - Restaurant</title>
+    <!-- Link til eksterne CSS-filer -->
+    <link rel="stylesheet" href="css/ny-layout.css">
+    <link rel="stylesheet" href="css/tilmeldlayout.css">
+    <link rel="stylesheet" href="css/HeadBottom.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 <div class="topbar"></div>
 <div class="content"></div>
 <div class="footer"></div>
-<h1>Welcome to Our Restaurants</h1>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Address</th>
-        <th>ID</th>
-        <th>Food Type</th>
-        <th>Vegetarian?</th>
-    </tr>
-    <tr th:each="restaurant : ${restaurants}">
-        <td th:text="${restaurant.name}">Name</td>
-        <td th:text="${restaurant.address}">Address</td>
-        <td th:text="${restaurant.id}">ID</td>
-        <td th:text="${restaurant.foodType}">Food Type</td>
-        <td th:text="${restaurant.isVegetarian ? 'yes' : 'no'}">Vegetarian</td>
-    </tr>
-</table>
+
+<div class="container">
+    <!-- Venstre side af fanen - Information -->
+    <div class="left">
+        <h2>Information</h2>
+        <div class="form-group">
+            <label for="navn">Navn:</label>
+            <input type="text" id="navn" name="navn">
+        </div>
+        <div class="form-group">
+            <label for="adresse">Adresse:</label>
+            <input type="text" id="adresse" name="adresse">
+        </div>
+        <div class="form-group">
+            <label for="tlf">Telefon:</label>
+            <input type="text" id="tlf" name="tlf">
+        </div>
+        <div class="form-group">
+            <label for="CVR">CVR:</label>
+            <input type="text" id="cvr" name="cvr">
+        </div>
+        <div class="form-group">
+            <label for="mail">Mail:</label>
+            <input type="email" id="mail" name="mail">
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="events" name="events">
+            <label for="events">Tilmeld Events</label>
+        </div>
+    </div>
+
+
+    <!-- Midterste side af fanen - Tider for tilbud -->
+    <div class="center">
+        <h2>Tider for tilbud</h2>
+        <table>
+            <tr>
+                <th>Dag</th>
+                <th>Tid</th>
+            </tr>
+            <!-- Rækker for hver ugedag med inputfelter til tidspunkter -->
+            <tr>
+                <td>Mandag</td>
+                <td><input type="text" name="mandag_tid" placeholder="fx. 20:00-21:00"></td>
+            </tr>
+            <tr>
+                <td>Tirsdag</td>
+                <td><input type="text" name="tirsdag_tid" placeholder="fx. 20:00-21:00"></td>
+            </tr>
+            <tr>
+                <td>Onsdag</td>
+                <td><input type="text" name="onsdag_tid" placeholder="fx. 20:00-21:00"></td>
+            </tr>
+            <tr>
+                <td>Torsdag</td>
+                <td><input type="text" name="torsdag_tid" placeholder="fx. 20:00-21:00"></td>
+            </tr>
+            <tr>
+                <td>Fredag</td>
+                <td><input type="text" name="fredag_tid" placeholder="fx. 20:00-21:00"></td>
+            </tr>
+            <tr>
+                <td>Lørdag</td>
+                <td><input type="text" name="lordag_tid" placeholder="fx. 20:00-21:00"></td>
+            </tr>
+            <tr>
+                <td>Søndag</td>
+                <td><input type="text" name="sondag_tid" placeholder="fx. 20:00-21:00"></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Højre side af fanen - Madtyper -->
+    <div class="right">
+        <h2>Madtyper</h2>
+        <!-- Checkboxe til valg af forskellige madtyper -->
+        <div class="checkbox-group">
+            <input type="checkbox" id="mexikansk" name="madtype">
+            <label for="mexikansk">Mexikansk</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="japansk" name="madtype">
+            <label for="japansk">Japansk</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="thai" name="madtype">
+            <label for="thai">Thailandsk</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="italiensk" name="madtype">
+            <label for="italiensk">Italiensk</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="test" name="madtype">
+            <label for="test">Test</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="test2" name="madtype">
+            <label for="test">Test</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="test3" name="madtype">
+            <label for="test">Test</label>
+        </div>
+        <!-- Tilmeldingsknap -->
+        <button type="submit">Tilmeld</button>
+    </div>
+</div>
+
 </body>
+
 </html>

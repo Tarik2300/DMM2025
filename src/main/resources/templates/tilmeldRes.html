@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tilmelding - Restaurant</title>
+
     <!-- Link til eksterne CSS-filer -->
     <link rel="stylesheet" href="css/ny-layout.css">
     <link rel="stylesheet" href="css/tilmeldlayout.css">
@@ -41,7 +42,12 @@
             <label for="mail">Mail:</label>
             <input type="email" id="mail" name="mail">
         </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="events" name="events">
+            <label for="events">Tilmeld Events</label>
+        </div>
     </div>
+
 
     <!-- Midterste side af fanen - Tider for tilbud -->
     <div class="center">
@@ -88,7 +94,7 @@
         <h2>Madtyper</h2>
         <!-- Checkboxe til valg af forskellige madtyper -->
         <div class="checkbox-group">
-            <input type="checkbox" id="mexikansk" name="madtype" checked>
+            <input type="checkbox" id="mexikansk" name="madtype">
             <label for="mexikansk">Mexikansk</label>
         </div>
         <div class="checkbox-group">
@@ -119,6 +125,8 @@
         <button type="submit">Tilmeld</button>
     </div>
 </div>
+
 </body>
 
 </html>
+
