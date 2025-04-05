@@ -11,6 +11,4 @@ public class Dmm2025Application {
     public static void main(String[] args) {
         SpringApplication.run(Dmm2025Application.class, args);
     }
-
-
 }

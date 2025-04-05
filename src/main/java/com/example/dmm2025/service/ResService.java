@@ -16,7 +16,4 @@ public class ResService {
     public List<Restaurant> fetchAllRestaurants() {
         return resRepo.fetchAllRestaurants();
     }
-
-
-
 }

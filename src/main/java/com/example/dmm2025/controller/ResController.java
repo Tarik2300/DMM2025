@@ -22,4 +22,8 @@ public class ResController {
         return "index";
     }
 
+    @GetMapping("artikler")
+    public String artikler() {
+        return "home/artikler";
+    }
 }
