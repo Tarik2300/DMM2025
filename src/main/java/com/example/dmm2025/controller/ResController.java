@@ -15,11 +15,6 @@ public class ResController {
     @Autowired
     private ResService resService;
 
-    @GetMapping("/")
-    public String displayRestaurants(Model model) {
-        List<Restaurant> restaurantList = resService.fetchAllRestaurants();
-        model.addAttribute("restaurants", restaurantList);
-        return "index";
-    }
+
 
 }

@@ -14,12 +14,4 @@ public class ResRepo {
     @Autowired
     JdbcTemplate template; // Using Spring's JdbcTemplate to handle database operations
 
-    public List<Restaurant> fetchAllRestaurants() {
-        String sql = "SELECT * FROM restaurants";
-        // Using the custom RestaurantRowMapper to map the ResultSet to the Restaurant object
-        List<Restaurant> restaurants = template.query(sql, new RestaurantRowMapper());
-        // Optional: Debugging to check values
-        restaurants.forEach(restaurant -> System.out.println("Is Vegetarian: " + restaurant.isVegetarian()));
-        return restaurants;
-    }
 }

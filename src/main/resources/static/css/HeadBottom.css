@@ -1,41 +1,204 @@
-/* koden her gør at man ikke kan scrolle "forbi" toppen og bunden af siden */
-html, body{
-    margin: 0;
-    padding: 0;
-    overflow-y: hidden;
-    overflow-x: hidden;
+/* Forhindrer scroll forbi top og bund */
+html, body {
+    margin: 0;                     /* Fjerner margin omkring body */
+    padding: 0;                    /* Fjerner padding omkring body */
+    overflow-y: hidden;            /* Forhindrer vertikal scroll */
+    overflow-x: hidden;            /* Forhindrer horisontal scroll */
 }
 
-/* Denne her topbar css dækker hele toppen af skærmen (100px ned) og er fixed i toppen
- uden at det går udover resten af sidens indhold. Den skubber alt andet ned så
- der ikke er overlay */
+/* Øverste bjælke med flex layout */
 .topbar {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background-color: white;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    position: relative;            /* Positioner topbaren relativt */
+    display: flex;                 /* Flexbox for at arrangere elementer i en række */
+    align-items: center;           /* Centrerer indholdet vertikalt */
+    padding: 0 20px;               /* Giver luft i venstre og højre side */
+    width: 100%;                   /* Fuld bredde */
+    height: 100px;                 /* Højde på topbaren */
+    background-color: #d4f3ba;     /* Lys grøn baggrundsfarve */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);  /* Let skygge for dybdeeffekt */
+    z-index: 1000;                 /* Sætter z-index for at sikre, at den er ovenpå andre elementer */
 }
 
-/* pointen med footeren er det samme som topbaren, til gengæld er den fixed og vi
- kan muligvis løbe ind i nogle overlay problemer
+/* Tekst til venstre i topbaren */
+.topbar-left {
+    display: flex;                 /* Flexbox for at arrangere tekst vertikalt */
+    flex-direction: column;        /* Placering af "DANMARK" og "Mod Madspild" lodret */
+    justify-content: center;       /* Centrerer teksten lodret i topbaren */
+    align-items: flex-start;       /* Justerer teksten til venstre */
+}
 
- Hvis man sætter positionen som relativ, begynder der først at gå helt galt */
+/* Container for teksten til venstre */
+.topbar-left-box {
+    background-color: white;       /* Hvid baggrund for venstre boks */
+    padding: 10px 20px;            /* Luft omkring teksten */
+    border-radius: 8px;            /* Runde hjørner */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Let skygge for dybdeeffekt */
+    display: flex;                 /* Flexbox for at arrangere tekst lodret */
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Stor overskrift ("DANMARK") */
+.title-large {
+    font-size: 28px;               /* Større fontstørrelse */
+    font-weight: bold;             /* Fed tekst */
+    color: black;                  /* Sort farve */
+}
+
+/* Mindre undertitel ("Mod Madspild") */
+.title-small {
+    font-size: 14px;               /* Mindre fontstørrelse */
+    color: #555;                   /* Lysere sort for mindre fremtrædende tekst */
+    margin-top: -4px;              /* Sætter teksten lidt tættere på den første */
+    letter-spacing: 1px;           /* Lidt mellemrum mellem bogstaverne */
+}
+
+/* Midtboks med restaurantnavne */
+.topbar-center-box {
+    position: absolute;            /* Absolut position for at centrere */
+    left: 50%;                     /* Centrerer horisontalt */
+    top: 50%;                      /* Centrerer vertikalt */
+    transform: translate(-50%, -50%); /* Justerer med transform for præcist at centrere */
+    width: 40%;                    /* Bredden af midten */
+    height: 70px;                  /* Højde på midterste boks */
+    background-color: white;       /* Hvid baggrund */
+    border-radius: 12px;           /* Runde hjørner */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15); /* Let skygge for dybdeeffekt */
+    display: flex;                 /* Flexbox for at centrere indholdet */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;              /* Skjuler alt der går ud over containerens grænser */
+    padding: 10px;                 /* Giver luft omkring indholdet */
+    flex-wrap: wrap;               /* Sørger for at elementer kan brydes til næste linje, hvis nødvendigt */
+}
+
+/* Restaurant-navne generelt */
+.topbar-center-box .rest {
+    position: absolute;            /* Absolut position for at placere hvert restaurantnavn */
+    font-weight: bold;             /* Fed tekst for restaurantnavnene */
+    font-size: 14px;               /* Størrelse på restaurantnavnene */
+    color: #333;                   /* Mørk grå tekstfarve */
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent hvid baggrund */
+    padding: 4px 8px;              /* Giver lidt luft omkring teksten */
+    border-radius: 5px;            /* Runde hjørner */
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.1); /* Let skygge for dybdeeffekt */
+    white-space: nowrap;           /* Sørger for at tekst ikke brydes over flere linjer */
+}
+
+/* Unikke placeringer og rotationer af restaurantnavnene */
+.r1 { top: 10%; left: 10%; transform: rotate(-5deg); }
+.r2 { top: 20%; left: 50%; transform: rotate(3deg); }
+.r3 { top: 55%; left: 20%; transform: rotate(-3deg); }
+.r4 { top: 65%; left: 60%; transform: rotate(5deg); }
+.r5 { top: 30%; left: 75%; transform: rotate(-2deg); }
+
+/* Højre boks med facts */
+.topbar-right-box {
+    position: absolute;            /* Absolut position for præcis placering */
+    right: 50px;                   /* Placér boksen 50px fra højre kant */
+    top: 50%;                      /* Vertikal centreret */
+    transform: translateY(-50%);   /* Justerer så boksen er præcist centreret */
+    width: 250px;                  /* Sætter bredden på boksen */
+    height: 60px;                  /* Højde af boksen */
+    background-color: white;       /* Hvid baggrund */
+    border-radius: 8px;            /* Runde hjørner */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Let skygge for dybdeeffekt */
+    display: flex;                 /* Flexbox for at centrere indholdet */
+    align-items: center;           /* Centrerer indholdet vertikalt */
+    justify-content: center;       /* Centrerer indholdet horisontalt */
+    overflow: hidden;              /* Skjuler alt der går ud over boksen */
+    padding: 10px 15px;            /* Giver lidt luft omkring indholdet */
+    text-align: center;            /* Centrerer tekst i boksen */
+    font-size: 13px;               /* Mindre tekststørrelse */
+    font-weight: bold;             /* Fed tekst */
+    color: #2d2d2d;                /* Mørk grå tekstfarve */
+}
+
+/* Carousel til facts */
+.fact-carousel {
+    display: flex;                 /* Flexbox for at arrangere facts vertikalt */
+    flex-direction: column;        /* Rækkefølge i kolonner */
+    animation: scrollFacts 25s ease-in-out infinite; /* Scroll animation */
+    animation-fill-mode: forwards; /* Sørger for at animationen fortsætter korrekt */
+    transform: translateY(120px);  /* Start på første fact */
+    height: fit-content;           /* Dynamisk højde baseret på indholdet */
+}
+
+/* Hver fact */
+.fact {
+    height: 60px;                  /* Højde på hver fact */
+    display: flex;                 /* Flexbox for at centrere indholdet */
+    align-items: center;           /* Vertikal centrering */
+    justify-content: center;       /* Horisontal centrering */
+}
+
+/* Animation for scroll af facts */
+@keyframes scrollFacts {
+    0%   { transform: translateY(120px); }  /* Startposition */
+    20%  { transform: translateY(60px); }   /* Efter 20% af animationen */
+    40%  { transform: translateY(0px); }    /* Efter 40% */
+    60%  { transform: translateY(-60px); }  /* Efter 60% */
+    80%  { transform: translateY(-120px); } /* Efter 80% */
+    100% { transform: translateY(120px); }  /* Returnere til startposition */
+}
+
+/* Værktøjslinje med knapper under topbaren */
+.toolbar {
+    position: fixed;               /* Fikser værktøjslinjen øverst */
+    top: 90px;                     /* Placer værktøjslinjen 90px fra toppen */
+    left: 0;                       /* Placer værktøjslinjen til venstre */
+    width: 100%;                   /* Fuld bredde */
+    height: 50px;                  /* Højde af værktøjslinjen */
+    background-color: whitesmoke;  /* Lys grå baggrundsfarve */
+    display: flex;                 /* Flexbox for at arrangere knapperne */
+    align-items: center;           /* Centrerer knapperne vertikalt */
+    padding-left: 20px;            /* Luft til venstre */
+    gap: 10px;                     /* Lidt mellemrum mellem knapperne */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Let skygge */
+    z-index: 999;                  /* Sørger for at værktøjslinjen er øverst */
+}
+
+/* Stil på knapper i værktøjslinjen */
+.toolbar button {
+    flex: 1;                       /* Får knapperne til at fylde lige meget */
+    top: 20%;                      /* Placer knapperne i midten vertikalt */
+    height: 60%;                   /* Højde på knapperne */
+    padding: 0 16px;               /* Luft omkring knapperne */
+    border: black;                 /* Sort kant */
+    border-radius: 10px;           /* Runde hjørner */
+    background-color: white;       /* Hvid baggrundsfarve */
+    color: black;                  /* Sort tekst */
+    font-size: 14px;               /* Tekststørrelse */
+    cursor: pointer;               /* Hånd-ikon ved hover */
+    transition: background-color 0.3s ease; /* Glidende overgang for hover */
+    z-index: 1000;                 /* Sørger for at knapperne er øverst */
+}
+
+/* Hover-effekt på knapperne */
+.toolbar button:hover {
+    background-color: #4fc105;      /* Grøn farve når knappen er hoveret */
+}
+
+/* Nederste bjælke (footer) */
 .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background-color: white;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    position: fixed;               /* Fikser footeren nederst på siden */
+    bottom: 0;                      /* Placer footeren helt nederst */
+    left: 0;                        /* Placer footeren til venstre */
+    width: 100%;                    /* Fuld bredde */
+    height: 40px;                   /* Højde på footeren */
+    background-color: white;       /* Hvid baggrundsfarve */
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); /* Let skygge for dybdeeffekt */
+    z-index: 1000;                  /* Sørger for at footeren er øverst */
+    display: flex;                  /* Flexbox for at arrangere indholdet i footeren */
+    align-items: center;            /* Centrerer indholdet vertikalt */
+    justify-content: space-between; /* Sørger for at indholdet er jævnt fordelt */
+    font-size: 12px;                /* Mindre tekststørrelse */
+    color: black;                   /* Sort tekst */
 }
-/* det er lidt en slags placeholder for at tilføje noget */
-.content {
-    margin-top: 70px;
-    margin-bottom: 50px;
+
+/* Stil til teksten i footeren */
+.footer h3 {
+    margin: 0;                      /* Fjerner margin omkring teksten */
+    padding-left: 10px;             /* Luft til venstre */
 }

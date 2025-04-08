@@ -1,17 +1,19 @@
 body {
-    background-color: darkslategray;
+    background-color: #4fc105;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-h1{
+h1 {
     font-size: 48px;
     font-weight: bold;
-    color: grey;
+    color: white;
 }
 
-tr{
+tr {
     font-size: 20px;
     font-weight: bold;
     color: black;
 }
+

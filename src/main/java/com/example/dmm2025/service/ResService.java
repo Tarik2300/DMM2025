@@ -13,9 +13,6 @@ public class ResService {
     @Autowired
     private ResRepo resRepo;
 
-    public List<Restaurant> fetchAllRestaurants() {
-        return resRepo.fetchAllRestaurants();
-    }
 
 
 
