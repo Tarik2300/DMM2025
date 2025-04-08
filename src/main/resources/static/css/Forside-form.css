@@ -1,0 +1,119 @@
+/* 🎯 Indholdsområde med 3 kolonner */
+.content {
+    display: flex;                         /* Aktiverer flexbox layout for at arrangere elementer horisontalt */
+    justify-content: center;              /* Centrerer alle kolonner vandret */
+    align-items: center;                  /* Centrerer dem lodret */
+    gap: 40px;                            /* Mellemrum mellem elementerne */
+    height: 100vh;                        /* Fylder hele højden af viewport */
+    padding: 140px 40px 40px 40px;        /* Plads til topbar, toolbar og footer */
+    box-sizing: border-box;               /* Padding tælles med i højde/bredde */
+    position: relative;                   /* Tillader absolut positionering inden i */
+}
+
+/* ✅ Kasse omkring kontaktformularen */
+.form-box {
+    background-color: white;              /* Hvid baggrund for formularen */
+    padding: 30px;                        /* Luft indeni boksen */
+    border-radius: 10px;                  /* Runde hjørner */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Let skygge for dybdeeffekt */
+    max-width: 500px;                     /* Maksimal bredde */
+    width: 100%;                          /* Fylder hele den tilladte bredde */
+    align-self: center;                   /* Centrerer formularen lodret i flex-container */
+    position: relative;                   /* Muliggør justering vha. margin */
+    margin-top: -200px;                   /* Skubber boksen opad lidt mere */
+}
+
+/* 🧩 Hver gruppe med label og input */
+.input-group {
+    display: flex;
+    flex-direction: column;              /* Placér labelen over inputfeltet */
+    align-items: flex-start;             /* Venstrestiller indhold */
+    width: 100%;                         /* Fylder hele formens bredde */
+    margin-bottom: 15px;                 /* Mellemrum mellem felterne */
+}
+
+/* 🏷️ Labels */
+label {
+    margin-bottom: 5px;                 /* Luft mellem label og inputfelt */
+    font-weight: bold;                  /* Fed tekst til labels */
+}
+
+/* ✏️ Tekstfelter og tekstområde */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 10cm;                        /* Fast bredde på inputfelterne */
+    padding: 8px;                       /* Indvendig luft for inputfelterne */
+    border: 1px solid #ccc;             /* Grå kant rundt om felterne */
+    border-radius: 4px;                 /* Runde hjørner på felterne */
+    font-size: 16px;                    /* Størrelse på tekst i felterne */
+    box-sizing: border-box;             /* Medtag padding i størrelsen */
+    resize: vertical;                   /* Kun lodret trækbar */
+    max-height: 230px;                  /* Maksimal højde for textarea */
+}
+
+/* 📝 Hele formularen */
+form {
+    display: flex;
+    flex-direction: column;             /* Felterne under hinanden */
+    align-items: flex-start;            /* Venstrestiller hele formularen */
+    width: 100%;                        /* Fylder hele bredden */
+}
+
+/* ✅ Send-knap */
+button {
+    background-color: #4CAF50;          /* Grøn farve på knappen */
+    color: white;                       /* Hvid tekst */
+    border: none;                       /* Ingen kant på knappen */
+    padding: 10px 20px;                 /* Indvendig luft i knappen */
+    text-transform: uppercase;          /* Store bogstaver på teksten */
+    cursor: pointer;                    /* Hånd-ikon ved hover */
+    border-radius: 4px;                 /* Runde hjørner på knappen */
+    font-size: 16px;
+    margin-top: 10px;                   /* Luft over knappen */
+}
+
+/* Hover-effekt på knappen */
+button:hover {
+    background-color: #45a049;          /* Mørkere grøn farve når man hover over knappen */
+}
+
+/* 📸 Billedcontainer */
+.image-box {
+    position: relative;                 /* Tillader absolut placerede elementer ovenpå billedet */
+    z-index: 1;                         /* Sørger for at info-boksen vises over billedet */
+}
+
+/* ℹ️ Info-boks placeret over billedet */
+.info-box {
+    position: absolute;                 /* Lægger sig ovenpå billedet */
+    top: 50%;                           /* Placerer den midt på siden lodret */
+    left: 60px;                         /* Skubber den ind over billedet fra venstre */
+    transform: translateY(-50%);        /* Trækker halvdelen op = midt på siden */
+    background-color: white;            /* Hvid baggrund */
+    padding: 30px;                      /* Luft omkring indholdet */
+    border-radius: 10px;                /* Runde hjørner */
+    border: 2px solid #cce3d1;          /* Miljøgrøn kant rundt om boksen */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Let skygge for dybdeeffekt */
+    max-width: 900px;                   /* Maksimal bredde på boksen */
+    width: 100%;                        /* Fylder hele bredden */
+    height: 300px;                      /* Højde på info-boksen */
+    z-index: 2;                         /* Sørger for at info-boksen ligger over billedet */
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif; /* Font-familie */
+    font-size: 17px;                    /* Størrelse på tekst */
+    line-height: 1.6;                   /* Linjeafstand */
+    color: #2e3d2f;                     /* Dæmpet mørkegrøn tekstfarve */
+}
+
+/* Overskrift i info-boksen */
+.info-box h2 {
+    margin-top: 0;                      /* Fjerner margin på toppen */
+    font-size: 36px;                    /* Større fontstørrelse */
+    color: #2c2c2c;                     /* Mørk grå farve på overskriften */
+}
+
+/* Brødtekst i info-boksen */
+.info-box p {
+    font-size: 22px;                    /* Størrelse på brødteksten */
+    color: #333;                        /* Mørk grå farve på brødteksten */
+}
