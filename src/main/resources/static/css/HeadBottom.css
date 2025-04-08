@@ -19,6 +19,25 @@ html, body{
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
+/* css til titlen på hjemmesiden "Danmark Mod Madspild" */
+.topbar-left{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size:20px;
+    color: black;
+}
+
+.topbar-mid{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.topbar-mid img{
+    max-height: 80px;
+    object-fit: contain;
+}
 
 /* toolbaren er bygget lidt på samme måde som topbaren. Dens funktion er at
  være en baggrund til hvor knapperne til de forskellige sider er */
@@ -37,6 +56,25 @@ html, body{
     z-index: 999;
 }
 
+.toolbar a{
+    flex:1;
+    top: 20%;
+    height: 60%;
+    padding: 0 16px;
+    border: black;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.toolbar a:hover{
+    background-color: #4fc105;
+}
+
 /* pointen med footeren er det samme som topbaren, til gengæld er den fixed og vi
  kan muligvis løbe ind i nogle overlay problemer
 
@@ -50,9 +88,17 @@ html, body{
     background-color: white;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+
+    /* CSS til den h3 som står i bunden */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size:12px;
+    color: black;
 }
 /* det er lidt en slags placeholder for at tilføje noget */
 .content {
     margin-top: 70px;
     margin-bottom: 50px;
 }
+
