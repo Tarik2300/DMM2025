@@ -1,31 +1,109 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="da" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Restaurant List</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Restaurantliste</title>
+
+    <!-- Henviser til top- og bundbjælke -->
     <link rel="stylesheet" th:href="@{/css/HeadBottom.css}">
+    <!-- Henviser til formularens layout -->
+    <link rel="stylesheet" th:href="@{/css/Forside-form.css}">
+    <!-- Henviser til global styling (baggrund, h1 osv.) -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<div class="topbar"></div>
-<div class="content"></div>
-<div class="footer"></div>
-<h1>Welcome to Our Restaurants</h1>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Address</th>
-        <th>ID</th>
-        <th>Food Type</th>
-        <th>Vegetarian?</th>
-    </tr>
-    <tr th:each="restaurant : ${restaurants}">
-        <td th:text="${restaurant.name}">Name</td>
-        <td th:text="${restaurant.address}">Address</td>
-        <td th:text="${restaurant.id}">ID</td>
-        <td th:text="${restaurant.foodType}">Food Type</td>
-        <td th:text="${restaurant.isVegetarian ? 'yes' : 'no'}">Vegetarian</td>
-    </tr>
-</table>
+
+<!-- Topbar med logo og titel -->
+<div class="topbar">
+    <!-- Venstre boks med logo og titel -->
+    <div class="topbar-left-box">
+        <div class="topbar-left">
+            <div class="title-large">DANMARK</div>
+            <div class="title-small">Mod Madspild</div>
+        </div>
+    </div>
+
+    <!-- Center boks med restaurantnavne -->
+    <div class="topbar-center-box">
+        <span class="rest r1">Bamboo Thai</span>
+        <span class="rest r2">La Tavola</span>
+        <span class="rest r3">El Pueblo</span>
+        <span class="rest r4">Dragon Wok</span>
+        <span class="rest r5">Fusion Bistro</span>
+    </div>
+
+    <!-- Højre boks med facts -->
+    <div class="topbar-right-box">
+        <div class="fact-carousel">
+            <div class="fact">Madspild står for 8-10% af verdens CO₂-udslip.</div>
+            <div class="fact">Hvert år smides over 1.3 milliarder tons mad ud globalt.</div>
+            <div class="fact">Hver dansker smider i gennemsnit 81 kg mad ud om året.</div>
+            <div class="fact">Reduceret madspild = reduceret drivhusgasudledning.</div>
+            <div class="fact">Overskudsmad kan hjælpe med at bekæmpe sult og spare penge.</div>
+        </div>
+    </div>
+</div>
+
+<!-- Toolbar med knapper under topbaren -->
+<div class="toolbar">
+    <button>Find Restaurant</button>
+    <button>Tilmeld Restaurant</button>
+    <button>Se Events</button>
+    <button>Artikler</button>
+</div>
+
+<!-- Info-boks med introduktion og beskrivelse -->
+<div class="info-box">
+    <h2>Velkommen til Danmark Mod Madspild</h2>
+    <p>
+        Vores platform forbinder dig med restauranter i nærheden, som tilbyder din yndlingsmad til exceptionelt
+        billige priser – alt sammen for at mindske madspild.
+    </p>
+    <p>
+        Du kan finde overskudsmad fra dine favoritkøkkener, tilmelde dig bæredygtige mad-events og støtte et grønnere Danmark.
+        Sammen gør vi en forskel – én portion ad gangen 🌱
+    </p>
+</div>
+
+<!-- Hovedindhold: billede og formular -->
+<div class="content">
+    <!-- Billede af miljørelateret ikon -->
+    <div class="image-box">
+        <img src="/Billeder/MiljoeMad.png" alt="Miljø ikon">
+    </div>
+
+    <!-- Formular til indtastning af brugeroplysninger -->
+    <div class="form-box">
+        <form>
+            <div class="input-group">
+                <label for="name">Navn:</label>
+                <input type="text" id="name" name="name" placeholder="Dit navn">
+            </div>
+
+            <div class="input-group">
+                <label for="phone">Telefonnummer:</label>
+                <input type="text" id="phone" name="phone" placeholder="Dit telefonnummer">
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Din email">
+            </div>
+
+            <div class="input-group">
+                <label for="description">Beskrivelse:</label>
+                <textarea id="description" name="description" placeholder="Skriv din besked her..." rows="5"></textarea>
+            </div>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>
+
+<!-- Footer med tekst -->
+<div class="footer">
+    <h3>© 2025 Danmark Mod Madspild</h3>
+</div>
+
 </body>
 </html>
