@@ -1,36 +1,55 @@
-/*bruges til at placere "Artikler" korrekt ift. prototypen på forsiden */
-.artikler-container {
-    text-align: right;
-    padding-right: 25%;
+/*grundopsætning for vores body i html og behøves ikke at blive kaldt på i html*/
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
-/*css for artikel.html og placering/design af artiklerne*/
+/*sløret baggrundsbillede og genbrugt davids billedeformat for opsætning*/
+.baggrundsbillede {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+    z-index: -1;
+}
 
-/*bliver opdelt i tre kolonner som vi genbruger fire gange og skaber afstand mellem hinanden*/
-.artikler {
+/*bokse der indeholder artikler som vist i prototypen for at holde en ren struktur og brugervenlig design, bliver brugt til at skabe afstand mellem hinanden og antal bokse der skal vises for hver række*/
+.artikelboks {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    row-gap: 60px;
-    margin-top: 30px;
+    gap: 30px;
+    padding: 40px;
 }
 
-/*dette tegner en boks rundt om artiklerne*/
+/*bruges til at designe vores bokse enkeltvis hvis nødvendigt*/
 .artikel {
-    padding: 20px 10px;
-    border: 3px solid #333;
-    border-radius: 0px;
-    height: 60px;
+    display: block;
+    background-color: rgba(200, 200, 200, 0.2);
+    color: black;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    padding: 20px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-/*skubber datoen til højre så den ikke overlapper overskrift/titel til artiklen jf. prototypen*/
 .dato {
     float: right;
+    font-size: 0.9em;
+    color: #666;
 }
 
-/*gå tilbage knap*/
-.go-back-button {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
+.artikel:hover {
+    background-color: #4fc105;
+    color: black;
 }
