@@ -15,7 +15,7 @@ html, body {
     width: 100%;                   /* Fuld bredde */
     height: 100px;                 /* Højde på topbaren */
     background-color: #d4f3ba;     /* Lys grøn baggrundsfarve */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);  /* Let skygge for dybdeeffekt */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Let skygge for dybdeeffekt */
     z-index: 1000;                 /* Sætter z-index for at sikre, at den er ovenpå andre elementer */
 }
 
@@ -155,7 +155,7 @@ html, body {
     align-items: center;           /* Centrerer knapperne vertikalt */
     padding-left: 20px;            /* Luft til venstre */
     gap: 10px;                     /* Lidt mellemrum mellem knapperne */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Let skygge */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Let skygge */
     z-index: 999;                  /* Sørger for at værktøjslinjen er øverst */
 }
 
@@ -188,7 +188,7 @@ html, body {
     width: 100%;                    /* Fuld bredde */
     height: 40px;                   /* Højde på footeren */
     background-color: white;       /* Hvid baggrundsfarve */
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); /* Let skygge for dybdeeffekt */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Let skygge for dybdeeffekt */
     z-index: 1000;                  /* Sørger for at footeren er øverst */
     display: flex;                  /* Flexbox for at arrangere indholdet i footeren */
     align-items: center;            /* Centrerer indholdet vertikalt */
