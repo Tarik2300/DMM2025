@@ -7,7 +7,7 @@
     <!-- Henviser til top- og bundbjælke -->
     <link rel="stylesheet" th:href="@{/css/HeadBottom.css}">
     <!-- Henviser til formularens layout -->
-    <link rel="stylesheet" th:href="@{/css/Forside-form.css}">
+    <link rel="stylesheet" th:href="@{/css/Forside.css}">
     <!-- Henviser til global styling (baggrund, h1 osv.) -->
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
@@ -46,10 +46,10 @@
 
 <!-- Toolbar med knapper under topbaren -->
 <div class="toolbar">
-    <button>Find Restaurant</button>
-    <button onclick="window.location.href='/tilmeldRes'">Tilmeld restaurant</button>
-    <button>Se Events</button>
-    <button>Artikler</button>
+    <button onclick="window.location.href='/findRes'">FIND RESTAURANT</button>
+    <button onclick="window.location.href='/tilmeldRes'">TILMELD RESTAURANT</button>
+    <button>SE EVENTS</button>
+    <button>ARTIKLER</button>
 </div>
 
 <!-- Info-boks med introduktion og beskrivelse -->
@@ -95,7 +95,7 @@
                 <textarea id="description" name="description" placeholder="Skriv din besked her..." rows="5"></textarea>
             </div>
 
-            <button type="submit">Send</button>
+            <button id="kontaktBtn" type="submit">Send</button>
         </form>
     </div>
 </div>

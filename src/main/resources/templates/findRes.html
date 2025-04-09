@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Restaurant</title>
+    <link rel="stylesheet" th:href="@{/css/find-res-layout.css}">
+    <link rel="stylesheet" th:href="@{/css/HeadBottom.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<!-- Header bottom type shit -->
+<div class="topbar">
+    <!-- Venstre boks med logo og titel -->
+    <div class="topbar-left-box">
+        <div class="topbar-left">
+            <div class="title-large">DANMARK</div>
+            <div class="title-small">Mod Madspild</div>
+        </div>
+    </div>
+    <!-- Center boks med restaurantnavne -->
+    <div class="topbar-center-box">
+        <span class="rest r1">Bamboo Thai</span>
+        <span class="rest r2">La Tavola</span>
+        <span class="rest r3">El Pueblo</span>
+        <span class="rest r4">Dragon Wok</span>
+        <span class="rest r5">Fusion Bistro</span>
+    </div>
+    <!-- Højre boks med facts -->
+    <div class="topbar-right-box">
+        <div class="fact-carousel">
+            <div class="fact">Madspild står for 8-10% af verdens CO₂-udslip.</div>
+            <div class="fact">Hvert år smides over 1.3 milliarder tons mad ud globalt.</div>
+            <div class="fact">Hver dansker smider i gennemsnit 81 kg mad ud om året.</div>
+            <div class="fact">Reduceret madspild = reduceret drivhusgasudledning.</div>
+            <div class="fact">Overskudsmad kan hjælpe med at bekæmpe sult og spare penge.</div>
+        </div>
+    </div>
+</div>
+<!-- Toolbar med knapper under topbaren -->
+<div class="toolbar">
+    <button onclick="window.location.href='/'">FORSIDE</button>
+    <button onclick="window.location.href='/tilmeldRes'">TILMELD RESTAURANT</button>
+    <button>SE EVENTS</button>
+    <button>ARTIKLER</button>
+</div>
+
+<!-- Footer med tekst -->
+<div class="footer">
+    <h3>© 2025 Danmark Mod Madspild</h3>
+</div>
+
+<div class="content-container">
+    <div class="filters">
+        <button>Filtre</button>
+
+        <button>Kinesisk</button>
+        <button>Mexicansk</button>
+        <button>Japansk</button>
+        <button>Thai</button>
+        <button>Fusion</button>
+
+        <button>Alle</button>
+        <button>Kun åbne</button>
+        <button>Aktive Events</button>
+    </div>
+
+    <div class="restaurant-list">
+        <h2>Liste over restauranter</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Navn</th>
+                <th>Adresse</th>
+                <th>Madtype</th>
+                <th>Vegetarisk?</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="restaurant : ${restaurants}">
+                <td th:text="${restaurant.name}">Navn</td>
+                <td th:text="${restaurant.address}">Adresse</td>
+                <td th:text="${restaurant.foodType}">Madtype</td>
+                <td th:text="${restaurant.isVegetarian()}">Vegetarisk?</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

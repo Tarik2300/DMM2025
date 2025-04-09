@@ -7,6 +7,8 @@
     width: 90%; /* Indstil en max bredde på containeren */
     padding: 10px 0;
     overflow: visible; /* Sørg for, at der ikke er overflow i containeren */
+    height: calc(100vh - 120px); /* Fylder pladsen mellem header og footer (antager at headeren + footer = 120px) */
+    box-sizing: border-box; /* Sørger for at padding tælles med i højden */
 }
 
 /* Venstre Sektion - Information */
@@ -16,9 +18,9 @@
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    height: calc(100vh - 160px); /* højde - 100vh minus topbar og footer */
-    margin-top: 10px; /* Flyt sektionen opad */
+    height: 100%; /* Fylder hele containerens højde */
     font-size: 14px; /* tekststørrelse */
+    overflow-y: auto; /* Sikrer at venstre sektion har scrollbar, hvis indholdet er for langt */
 }
 
 /* Midterste Sektion - Tider for tilbud */
@@ -28,9 +30,9 @@
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    height: calc(100vh - 160px); /* Justeret højde - 100vh minus topbar og footer */
-    margin-top: 10px; /* Flyt sektionen opad */
+    height: 100%; /* Fylder hele containerens højde */
     font-size: 14px; /* Mindre tekststørrelse */
+    overflow-y: auto; /* Sikrer at midterste sektion har scrollbar, hvis indholdet er for langt */
 }
 
 /* Højre Sektion - Madtyper */
@@ -40,9 +42,9 @@
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    height: calc(100vh - 160px); /* højde - 100vh minus topbar og footer */
-    margin-top: 10px; /* Flyt sektionen opad */
+    height: 100%; /* Fylder hele containerens højde */
     font-size: 14px; /* tekststørrelse */
+    overflow-y: auto; /* Sikrer at højre sektion har scrollbar, hvis indholdet er for langt */
 }
 
 /* Style for formular felter */
@@ -93,10 +95,10 @@ button[type="submit"]:hover {
     background-color: #45a049; /* Ændre farve ved hover */
 }
 
+/* Responsiv justering for små skærme */
 .left, .center, .right {
     width: 100%; /* Sæt bredden af hver sektion til 100% på små skærme */
     margin-bottom: 10px; /* Mellemrum mellem sektionerne */
-    height: auto; /* Juster højden for små skærme */
-
+    margin-top: 65px;
+    height: 80%; /* Juster højden for små skærme */
 }
-

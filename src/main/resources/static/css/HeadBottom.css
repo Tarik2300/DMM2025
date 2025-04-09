@@ -172,6 +172,7 @@ html, body {
     font-size: 14px;               /* Tekststørrelse */
     cursor: pointer;               /* Hånd-ikon ved hover */
     transition: background-color 0.3s ease; /* Glidende overgang for hover */
+    margin-top: 10px;                   /* Luft over knappen */
     z-index: 1000;                 /* Sørger for at knapperne er øverst */
 }
 

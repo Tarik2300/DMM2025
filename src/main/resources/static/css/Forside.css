@@ -61,7 +61,7 @@ form {
 }
 
 /* ✅ Send-knap */
-button {
+#kontaktBtn {
     background-color: #4CAF50;          /* Grøn farve på knappen */
     color: white;                       /* Hvid tekst */
     border: none;                       /* Ingen kant på knappen */
@@ -70,8 +70,8 @@ button {
     cursor: pointer;                    /* Hånd-ikon ved hover */
     border-radius: 4px;                 /* Runde hjørner på knappen */
     font-size: 16px;
-    margin-top: 10px;                   /* Luft over knappen */
 }
+
 
 /* Hover-effekt på knappen */
 button:hover {

@@ -1,0 +1,74 @@
+body {
+    background-image: url('/Billeder/MiljoeMad.png');  /* Stien til dit billede */
+    background-size: cover;   /* Gør billedet responsivt og dækker hele skærmen */
+    background-position: center;  /* Centrerer billedet */
+    background-attachment: fixed; /* Får billedet til at forblive på plads, når der scrolles */
+    background-repeat: no-repeat; /* Sikrer, at billedet ikke gentages */
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif; /* Skrifttype til siden */
+}
+
+/* HELE SKIDTET PÅNÆR BOTTOMHEADERS OSV */
+.content-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px;
+    margin-top: 140px;
+    margin-bottom: 60px;
+    box-sizing: border-box;
+}
+
+/* VENSTRESIDE – KNAPPER */
+.filters {
+    width: 35%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #d4f3ba;
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+    border-radius: 12px; /* Gør hjørnerne runde */
+}
+
+.filters button {
+    padding: 10px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    border: 2px solid black;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    border-radius: 8px; /* Gør knappernes hjørner runde */
+}
+
+.filters button:hover {
+    background-color: #e6e6e6;
+}
+
+/* HØJRESIDE – TABEL */
+.restaurant-list {
+    width: 65%;
+    background-color: #d4f3ba;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 12px; /* Gør hjørnerne runde */
+}
+
+.restaurant-list h2 {
+    margin-bottom: 10px;
+}
+
+.restaurant-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.restaurant-list th, .restaurant-list td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    background-color: whitesmoke;
+}
