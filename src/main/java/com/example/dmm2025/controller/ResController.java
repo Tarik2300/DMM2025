@@ -33,4 +33,10 @@ public class ResController {
         model.addAttribute("restaurants", restaurantList);
         return "/findRes";
     }
+
+    @GetMapping("/artikler")
+    public String visArtiklerSide() {
+        return "artikler"; // uden .html, Thymeleaf finder den
+
+    }
 }

@@ -1,0 +1,74 @@
+/* grundopsætning for vores body i html og behøves ikke at blive kaldt på i html */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+/* sløret baggrundsbillede og genbrugt davids billedeformat for opsætning */
+body {
+    background-image: url('/Billeder/MiljoeMad.png');  /* Stien til dit billede */
+    background-size: cover;   /* Gør billedet responsivt og dækker hele skærmen */
+    background-position: center;  /* Centrerer billedet */
+    background-attachment: fixed; /* Får billedet til at forblive på plads, når der scrolles */
+    background-repeat: no-repeat; /* Sikrer, at billedet ikke gentages */
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif; /* Skrifttype til siden */
+    z-index: -1;
+}
+
+/* boksene der indeholder artikler og knapper */
+.artikelboks, .knap-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Skaber 3 kolonner */
+    gap: 100px; /* Afstand mellem elementerne */
+    padding: 40px;
+    margin-top: 40px;
+}
+
+/* design af individuelle boks-elementer (artikler) */
+.artikel {
+    display: block;
+    background-color: white;  /* Ændret baggrund til hvid */
+    color: black;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    padding: 20px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Tilføjet transform-effekt */
+}
+
+.dato {
+    float: right;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.artikel:hover {
+    background-color: #4fc105;  /* Grøn baggrund ved hover */
+    color: white;                /* Ændret tekstfarve til hvid ved hover */
+    transform: scale(1.05);      /* Let forstørrelse ved hover for at skabe en interaktiv effekt */
+}
+
+/* Knappernes design */
+#artikelBtn {
+    display: block;
+    background-color: white;
+    color: black;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.knap:hover {
+    background-color: #387e1b;  /* Mørkere grøn ved hover */
+    transform: scale(1.05);      /* Let forstørrelse ved hover */
+}
