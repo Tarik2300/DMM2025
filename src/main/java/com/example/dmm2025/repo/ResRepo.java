@@ -1,4 +1,4 @@
-package com.example.dmm2025.Repo;
+package com.example.dmm2025.repo;
 
 import com.example.dmm2025.config.RestaurantRowMapper;
 import com.example.dmm2025.model.Restaurant;

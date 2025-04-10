@@ -3,19 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Restaurantliste</title>
-
-    <!-- Henviser til top- og bundbjælke -->
     <link rel="stylesheet" th:href="@{/css/HeadBottom.css}">
-    <!-- Henviser til formularens layout -->
     <link rel="stylesheet" th:href="@{/css/Forside.css}">
-    <!-- Henviser til global styling (baggrund, h1 osv.) -->
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
-<!-- Topbar med logo og titel -->
 <div class="topbar">
-    <!-- Venstre boks med logo og titel -->
     <div class="topbar-left-box">
         <div class="topbar-left">
             <div class="title-large">DANMARK</div>
@@ -23,7 +17,6 @@
         </div>
     </div>
 
-    <!-- Center boks med restaurantnavne -->
     <div class="topbar-center-box">
         <span class="rest r1">Bamboo Thai</span>
         <span class="rest r2">La Tavola</span>
@@ -32,7 +25,6 @@
         <span class="rest r5">Fusion Bistro</span>
     </div>
 
-    <!-- Højre boks med facts -->
     <div class="topbar-right-box">
         <div class="fact-carousel">
             <div class="fact">Madspild står for 8-10% af verdens CO₂-udslip.</div>
@@ -44,7 +36,6 @@
     </div>
 </div>
 
-<!-- Toolbar med knapper under topbaren -->
 <div class="toolbar">
     <button onclick="window.location.href='/findRes'">FIND RESTAURANT</button>
     <button onclick="window.location.href='/tilmeldRes'">TILMELD RESTAURANT</button>
@@ -52,55 +43,43 @@
     <button onclick="window.location.href='/artikler'">ARTIKLER</button>
 </div>
 
-<!-- Info-boks med introduktion og beskrivelse -->
 <div class="info-box">
     <h2>Velkommen til Danmark Mod Madspild</h2>
-    <p>
-        Vores platform forbinder dig med restauranter i nærheden, som tilbyder din yndlingsmad til exceptionelt
-        billige priser – alt sammen for at mindske madspild.
-    </p>
-    <p>
-        Du kan finde overskudsmad fra dine favoritkøkkener, tilmelde dig bæredygtige mad-events og støtte et grønnere Danmark.
-        Sammen gør vi en forskel – én portion ad gangen 🌱
-    </p>
+    <p>Vores platform forbinder dig med restauranter i nærheden, som tilbyder din yndlingsmad til exceptionelt billige priser – alt sammen for at mindske madspild.</p>
+    <p>Du kan finde overskudsmad fra dine favoritkøkkener, tilmelde dig bæredygtige mad-events og støtte et grønnere Danmark. Sammen gør vi en forskel – én portion ad gangen 🌱</p>
 </div>
 
-<!-- Hovedindhold: billede og formular -->
 <div class="content">
-    <!-- Billede af miljørelateret ikon -->
     <div class="image-box">
         <img src="/Billeder/MiljoeMad.png" alt="Miljø ikon">
     </div>
 
-    <!-- Formular til indtastning af brugeroplysninger -->
     <div class="form-box">
-        <form>
+        <form action="/kontakt/send" method="post">
+            <div th:if="${message}" class="message">
+                <p th:text="${message}"></p>
+            </div>
             <div class="input-group">
                 <label for="name">Navn:</label>
-                <input type="text" id="name" name="name" placeholder="Dit navn">
+                <input type="text" id="name" name="navn" placeholder="Dit navn" required>
             </div>
-
             <div class="input-group">
                 <label for="phone">Telefonnummer:</label>
-                <input type="text" id="phone" name="phone" placeholder="Dit telefonnummer">
+                <input type="text" id="phone" name="telefon" placeholder="Dit telefonnummer">
             </div>
-
             <div class="input-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Din email">
+                <input type="email" id="email" name="email" placeholder="Din email" required>
             </div>
-
             <div class="input-group">
                 <label for="description">Beskrivelse:</label>
-                <textarea id="description" name="description" placeholder="Skriv din besked her..." rows="5"></textarea>
+                <textarea id="description" name="besked" placeholder="Skriv din besked her..." rows="5"></textarea>
             </div>
-
             <button id="kontaktBtn" type="submit">Send</button>
         </form>
     </div>
 </div>
 
-<!-- Footer med tekst -->
 <div class="footer">
     <h3>© 2025 Danmark Mod Madspild</h3>
 </div>
